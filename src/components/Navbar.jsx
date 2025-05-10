@@ -1,19 +1,32 @@
 import { Link } from "react-router-dom";
 
-export const Navbar = () => {
+const Navbar = () => {
 
 	return (
-		<nav className="navbar navbar-light bg-light">
+
+		<nav className="navbar navbar-dark bg-black">
 			<div className="container">
 				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+					<img id="warsLogo" src="https://brandemia.org/contenido/subidas/2021/05/portada-starwars-imagenes-brandemia-blog-1000x670.jpg"/>
 				</Link>
 				<div className="ml-auto">
 					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
+						<div className="dropdown">
+							<button className="btnFav btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+								<i class="fa-solid fa-star"><p>Favoritos</p></i>
+							</button>
+							<ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
+								<li><button className="dropdown-item" type="button">Action</button></li>
+								<li><button className="dropdown-item" type="button">Another action</button></li>
+								<li><button className="dropdown-item" type="button">Something else here</button></li>
+							</ul>
+						</div>
 					</Link>
 				</div>
 			</div>
 		</nav>
+
 	);
 };
+
+export default Navbar;
