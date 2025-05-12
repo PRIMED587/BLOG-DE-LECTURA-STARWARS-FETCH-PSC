@@ -10,7 +10,7 @@ const Navbar = () => {
 					<img id="warsLogo" src="https://brandemia.org/contenido/subidas/2021/05/portada-starwars-imagenes-brandemia-blog-1000x670.jpg"/>
 				</Link>
 				<div id="HeaderTextBlog">
-					<p>BLOG PROYECTO MUNDO STAR WARS</p>
+					<p>STAR WARS BLOG</p>
 				</div>
 				<div className="ml-auto">
 					<Link to="/demo">

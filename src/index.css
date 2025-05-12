@@ -3,10 +3,11 @@
 }
 
 #HeaderTextBlog {
-    color: rgb(255, 205, 7);
-    font-size: 40px;
-    margin-left: 250px;
-    text-shadow: -3px -1px 10px rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    font-size: 60px;
+    margin-top: 10px;
+    margin-left: 600px;
+    text-shadow: -3px -1px 10px rgba(255, 255, 255, 0.547);
 
 }
 
@@ -42,16 +43,18 @@ body {
 
 
 .btnFav {
-    width: 100px;
-    height: 20px;
+    width: 20px;
+    height: 10px;
+   
     padding: 10px;
+    padding-bottom: 10px;
     background: rgb(0, 0, 0) !important;
     border: black;
 
 }
 
 .fa-star {
-    margin-left: 150px;
+    margin: auto;
     font-size: 20px;
     color: rgb(255, 200, 0) !important;
 
@@ -63,7 +66,7 @@ body {
     padding: 10px;
     font-size: 20px;
     font-weight: 100 !important;
-    color: rgb(255, 255, 255) !important;
+    color: rgb(255, 208, 0) !important;
 
 }
 
@@ -71,6 +74,12 @@ body {
     padding: 0%;
     margin-right: 90px;
     align-content: flex-end;
+
+}
+
+#containerCard {
+    border: 1px solid rgb(236, 185, 2);
+
 
 }
 
@@ -121,9 +130,9 @@ body {
     background-position-x: right;
     background-repeat: no-repeat;
 
-    box-shadow: -13px 15px 0px -3px rgba(255, 255, 255, 0.75);
-    -webkit-box-shadow: -13px 15px 0px -3px rgba(255, 255, 255, 0.75);
-    -moz-box-shadow: -13px 15px 0px -3px rgba(255, 255, 255, 0.75);
+    box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
+    -webkit-box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
+    -moz-box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
 
 }
 
@@ -141,9 +150,9 @@ body {
     background-size: 290px 50px;
     background-position-x: right;
     background-repeat: no-repeat;
-    box-shadow: -13px 15px 0px -3px rgba(255, 255, 255, 0.75);
-    -webkit-box-shadow: -13px 15px 0px -3px rgba(255, 255, 255, 0.75);
-    -moz-box-shadow: -13px 15px 0px -3px rgba(255, 255, 255, 0.75);
+    box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
+    -webkit-box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
+    -moz-box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
 }
 
 #PlanetasButtons :hover {
@@ -159,9 +168,9 @@ body {
     background-size: 290px 50px;
     background-position-x: right;
     background-repeat: no-repeat;
-    box-shadow: -13px 15px 0px -3px rgba(255, 255, 255, 0.75);
-    -webkit-box-shadow: -13px 15px 0px -3px rgba(255, 255, 255, 0.75);
-    -moz-box-shadow: -13px 15px 0px -3px rgba(255, 255, 255, 0.75);
+    box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
+    -webkit-box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
+    -moz-box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
 }
 
 #VehiculosButtons :hover {
@@ -176,6 +185,21 @@ body {
 
 #addFavs {
     margin-left: 450px;
-    color: white;
+
+}
+
+.card h-100 {
+    border: 1px solid black;
+}
+
+#backgroundBodyCard {
+    font-size: 30px;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf7J-KsJHCAiIgo6wJNk7-VtbJ8QT_w0cFHQ&s");
+    background-size: cover;
+}
+
+#backgroundBodyCard h5 {
+    font-size: 30px;
+    text-decoration: none !important;
 
 }

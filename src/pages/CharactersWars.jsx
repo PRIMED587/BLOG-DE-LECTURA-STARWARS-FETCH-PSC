@@ -43,9 +43,9 @@ const CharactersWars = () => {
                         return (
                             <div key={index} className="col-4">
                                 <Link to={`/Personajes/${personaje.uid}`}>
-                                    <div className="card h-100">
+                                    <div id="containerCard" className="card h-100">
                                         <img src="https://www.shutterstock.com/image-photo/animated-character-3d-image-baby-600nw-2493868223.jpg" className="card-img-top" alt="..." />
-                                        <div className="card-body">
+                                        <div id="backgroundBodyCard" className="card-body">
                                             <h5 className="card-title">{personaje.name}</h5>
                                             <p className="card-text"></p>
                                         </div>
