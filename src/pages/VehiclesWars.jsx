@@ -1,41 +1,63 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const VehiclesWars = () => {
+
+    const [lista, setLista] = useState([])
+
+    async function obtenerVehiculo() {
+
+        try {
+            const response = await fetch('https://www.swapi.tech/api/vehicles')
+            console.log(response)
+
+            if (response.status == 404) {
+                return
+            }
+
+            const data = await response.json()
+            console.log(data)
+
+            setLista(data.results)
+
+        }
+
+        catch (error) {
+            console.log(error)
+        }
+
+    }
+
+    useEffect(() => {
+        obtenerVehiculo()
+
+    }, [])
+
+
     return (
         <>
+
             <div className="row row-cols-1 row-cols-md-3 g-4">
-                <div className="col">
-                    <div className="card h-100">
-                        <img src="https://i.ytimg.com/vi/PGbioOf_crY/hqdefault.jpg" className="card-img-top" alt="..."/>
-                            <div className="card-body">
-                                <h5 className="card-title">Vehiculos</h5>
-                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                {
+                    lista.map((vehiculo, index) => {
+                        return (
+                            <div key={index} className="col-4">
+                                <Link to={`/Vehiculos/${vehiculo.uid}`}>
+                                    <div className="card h-100">
+                                        <img src="https://www.shutterstock.com/image-photo/animated-character-3d-image-baby-600nw-2493868223.jpg" className="card-img-top" alt="..." />
+                                        <div className="card-body">
+                                            <h5 className="card-title">{vehiculo.name}</h5>
+                                            <p className="card-text"></p>
+                                        </div>
+                                    </div>
+                                </Link>
                             </div>
-                            
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card h-100">
-                        <img src="https://i.ytimg.com/vi/PGbioOf_crY/hqdefault.jpg" className="card-img-top" alt="..."/>
-                            <div className="card-body">
-                                <h5 className="card-title">Vehiculos</h5>
-                                <p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            </div>
-                          
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card h-100">
-                        <img src="https://i.ytimg.com/vi/PGbioOf_crY/hqdefault.jpg" className="card-img-top" alt="..."/>
-                            <div className="card-body">
-                                <h5 className="card-title">Vehiculos</h5>
-                                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                            </div>
-                            
-                    </div>
-                </div>
+                        )
+
+                    })
+                }
             </div>
+
         </>
 
 

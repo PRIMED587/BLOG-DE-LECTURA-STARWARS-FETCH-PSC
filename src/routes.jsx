@@ -10,6 +10,8 @@ import CharactersWars from "./pages/CharactersWars";
 import PlanetsWars from "./pages/PlanetsWars";
 import VehiclesWars from "./pages/VehiclesWars";
 import Personajes from "./pages/Personajes";
+import Planetas from "./pages/Planetas";
+import Vehiculos from "./pages/Vehiculos";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -26,7 +28,9 @@ export const router = createBrowserRouter(
       <Route path="/" element={<CharactersWars />} />
       <Route path="/PlanetsWars" element={<PlanetsWars />} />
       <Route path="/VehiclesWars" element={<VehiclesWars />} />
-      <Route path="/Personaje/:id" element={<Personajes />} />
+      <Route path="/Personajes/:id" element={<Personajes />} />
+      <Route path="/Planetas/:id" element={<Planetas />} />
+      <Route path="/Vehiculos/:id" element={<Vehiculos />} />
 
     </Route>
   )

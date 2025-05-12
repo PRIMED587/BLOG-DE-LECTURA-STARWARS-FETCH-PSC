@@ -1,5 +1,25 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#HeaderTextBlog {
+    color: rgb(255, 205, 7);
+    font-size: 40px;
+    margin-left: 250px;
+    text-shadow: -3px -1px 10px rgb(255, 255, 255);
+
+}
+
 body {
-    background-color: rgb(8, 8, 8);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(3, 15, 33, 1) 52%, rgba(13, 15, 13, 1) 100%);
+
+}
+
+#navbarBack {
+    padding: 0%;
+    margin-bottom: 30px;
+    width: auto;
+    height: 110px;
 }
 
 #warsLogo {
@@ -8,7 +28,7 @@ body {
 }
 
 .nav-link {
-    font-family: Arial, Helvetica, sans-serif;
+
     color: whitesmoke !important;
     width: 200px;
     height: 50px;
@@ -20,6 +40,7 @@ body {
     background-color: rgb(11, 10, 10) !important;
 }
 
+
 .btnFav {
     width: 100px;
     height: 20px;
@@ -30,22 +51,131 @@ body {
 }
 
 .fa-star {
-    font-size: 30px;
+    margin-left: 150px;
+    font-size: 20px;
     color: rgb(255, 200, 0) !important;
 
 }
 
 .fa-star p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     align-content: center;
     padding: 10px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-top: 10px;
-    font-size: 15px;
-    color: rgb(255, 200, 0) !important;
+    font-size: 20px;
+    font-weight: 100 !important;
+    color: rgb(255, 255, 255) !important;
 
 }
 
 #sidebarOptions {
+    padding: 0%;
+    margin-right: 90px;
     align-content: flex-end;
+
+}
+
+#cardBody {
+    border: 3px solid rgb(236, 185, 2);
+    background-color: black;
+    margin: auto;
+    margin-top: 40px;
+    width: 800px;
+}
+
+#cardBody img {
+    border-bottom: 3px solid rgb(236, 185, 2);
+
+
+
+}
+
+#cardBody h5 {
+    padding: 0;
+    margin: auto;
+    text-align: center;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSQy4K9Q0uZS89Yzw_T7Cpm-ZVYjxk217pFA&s") !important;
+    background-size: cover;
+
+}
+
+#propiertiesList li {
+    color: white;
+    border: none;
+    background-color: black !important;
+}
+
+#propiertiesList h3 {
+    color: rgb(244, 200, 3);
+
+    border: none;
+    background-color: black !important;
+}
+
+
+#PersonajesButtons {
+    border-radius: 1px 50px 1px 50px;
+    width: 290px;
+    font-weight: bold;
+    background-image: url("https://cdn-ssl.s7.shopdisney.com/is/image/ShopDisney/mb_franchise-star-wars_20190701_2x?fit=constrain&cropN=0,0,1,1&fmt=jpeg&qlt=90&wid=1200");
+    background-size: 290px 50px;
+    background-position-x: right;
+    background-repeat: no-repeat;
+
+    box-shadow: -13px 15px 0px -3px rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: -13px 15px 0px -3px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: -13px 15px 0px -3px rgba(255, 255, 255, 0.75);
+
+}
+
+#PersonajesButtons :hover {
+    transition-duration: 400ms;
+    text-shadow: -3px -1px 10px rgb(243, 0, 0);
+
+}
+
+#PlanetasButtons {
+    border-radius: 1px 50px 1px 50px;
+    width: 290px;
+    font-weight: bold;
+    background-image: url("https://i.pinimg.com/736x/5d/ee/d4/5deed4733b53eb468208d5d4589fc0d0.jpg");
+    background-size: 290px 50px;
+    background-position-x: right;
+    background-repeat: no-repeat;
+    box-shadow: -13px 15px 0px -3px rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: -13px 15px 0px -3px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: -13px 15px 0px -3px rgba(255, 255, 255, 0.75);
+}
+
+#PlanetasButtons :hover {
+    transition-duration: 400ms;
+    text-shadow: -3px -1px 10px rgb(243, 0, 0);
+}
+
+#VehiculosButtons {
+    border-radius: 1px 50px 1px 50px;
+    width: 290px;
+    font-weight: bold;
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/232/550/493/star-trek-uss-enterprise-spaceship-space-multiple-display-wallpaper-preview.jpg");
+    background-size: 290px 50px;
+    background-position-x: right;
+    background-repeat: no-repeat;
+    box-shadow: -13px 15px 0px -3px rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: -13px 15px 0px -3px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: -13px 15px 0px -3px rgba(255, 255, 255, 0.75);
+}
+
+#VehiculosButtons :hover {
+    transition-duration: 400ms;
+    text-shadow: -3px -1px 10px rgb(243, 0, 0);
+}
+
+
+#sidebarOptions p {
+    margin-left: 25px;
+}
+
+#addFavs {
+    margin-left: 450px;
+    color: white;
 
 }

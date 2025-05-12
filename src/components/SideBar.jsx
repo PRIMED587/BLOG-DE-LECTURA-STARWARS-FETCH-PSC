@@ -8,13 +8,13 @@ const SideBar = () => {
         <>
             <ul id="sidebarOptions" class="nav flex-column">
                 <li class="nav-item">
-                    <Link class="nav-link" to={"/"} href="#">PERSONAJES</Link>
+                    <Link id="PersonajesButtons" class="nav-link" to={"/"} href="#"><p>PERSONAJES</p></Link>
                 </li>
                 <li class="nav-item">
-                    <Link class="nav-link" to={"/PlanetsWars"} href="#">PLANETAS</Link>
+                    <Link id="PlanetasButtons" class="nav-link" to={"/PlanetsWars"} href="#"><p>PLANETAS</p></Link>
                 </li>
                 <li class="nav-item">
-                    <Link class="nav-link" to={"/VehiclesWars"} href="#">VEHICULOS</Link>
+                    <Link id="VehiculosButtons" class="nav-link" to={"/VehiclesWars"} href="#"><p>VEHICULOS</p></Link>
                 </li>
             </ul>
 

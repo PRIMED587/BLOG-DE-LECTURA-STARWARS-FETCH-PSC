@@ -11,10 +11,10 @@ export const Layout = () => {
             <Navbar />
             <div className="container">
                 <div className="row">
-                    <div className="col-md-1">
+                    <div className="col-md-3">
                         <SideBar />
                     </div>
-                    <div className="col-md-11">
+                    <div className="col-md-9">
                         <Outlet />
 
                     </div>
