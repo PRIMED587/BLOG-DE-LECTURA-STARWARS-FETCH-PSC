@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { misFavoritos } from "../store";
+import useGlobalReducer from "../hooks/useGlobalReducer";
 
 const Personajes = () => {
-
+const { store, dispatch } = useGlobalReducer()
     const [personaje, setPersonaje] = useState(null)
 
     const { id } = useParams()
@@ -65,7 +67,7 @@ const AgregarFoto = () => {
                     <li className="list-group-item"><h3>Color de Piel:</h3> {personaje?.skin_color}</li>
                 </ul>
                 <div className="card-body">
-                    <a id="addFavs" href="#" className="card-link"><i class="fa-regular fa-star"></i>Añadir a favoritos</a>
+                    <a onClick={() => misFavoritos(dispatch,personaje.name,store)} id="addFavs" href="#" className="card-link"><i class="fa-regular fa-star"></i>Añadir a favoritos</a>
                 </div>
             </div>
         </div>
