@@ -46,7 +46,6 @@ body {
 .btnFav {
     width: 20px;
     height: 10px;
-
     padding: 10px;
     padding-bottom: 10px;
     background: rgb(0, 0, 0) !important;
@@ -79,7 +78,7 @@ body {
 }
 
 #containerCard {
-    border: 1px solid rgb(236, 185, 2);
+    border: 1px solid rgb(255, 200, 0);
 
 
 }
@@ -100,6 +99,7 @@ body {
 }
 
 #cardBody h5 {
+    color: white;
     padding: 0;
     margin: auto;
     text-align: center;
@@ -109,6 +109,7 @@ body {
 }
 
 #propiertiesList li {
+    font-size: 20px;
     color: white;
     border: none;
     background-color: black !important;
@@ -116,7 +117,6 @@ body {
 
 #propiertiesList h3 {
     color: rgb(244, 200, 3);
-
     border: none;
     background-color: black !important;
 }
@@ -185,9 +185,21 @@ body {
 }
 
 #addFavs {
-    margin-left: 450px;
+    display: flex;
+    margin-left: 600px;
+    margin-top: 10px;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
 
 }
+
+#addFavs p {
+    color: white;
+
+
+}
+
 
 .card h-100 {
     border: 1px solid black;

@@ -5,7 +5,7 @@ const CharactersWars = () => {
 
     const [lista, setLista] = useState([])
 
-    const arrayImagenes = [
+        const arrayImagenes = [
             'https://img.europapress.es/fotoweb/fotonoticia_20150620132813_690.jpg',
             'https://t3.ftcdn.net/jpg/04/03/74/56/360_F_403745687_jKYV9soTaAEoQUUfQNxcykaUWs0Ygm6G.jpg',
             'https://www.rockandpop.cl/wp-content/uploads/2017/06/R2D2.jpg',
