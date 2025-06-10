@@ -1,156 +1,208 @@
-
 * {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-decoration: none !important;
-    box-sizing: border-box;
+}
+
+#HeaderTextBlog {
+    color: rgb(255, 255, 255);
+    font-size: 60px;
+    margin-top: 10px;
+    margin-left: 600px;
+    text-shadow: -3px -1px 10px rgba(255, 255, 255, 0.547);
+
 }
 
 body {
     background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(3, 15, 33, 1) 52%, rgba(13, 15, 13, 1) 100%);
-    margin: 0;
-    padding: 0;
-}
 
-#HeaderTextBlog {
-    color: white;
-    font-size: 2.5rem;
-    margin-top: 10px;
-    text-align: center;
-    text-shadow: -3px -1px 10px rgba(255, 255, 255, 0.547);
 }
 
 #navbarBack {
-    padding: 0;
+    padding: 0%;
     margin-bottom: 30px;
+    width: auto;
     height: 110px;
 }
 
 #warsLogo {
-    width: 120px;
-    height: auto;
+    width: 160px;
+    height: 100px;
 }
 
 .nav-link {
+
     color: whitesmoke !important;
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    font-size: 18px;
+    width: 200px;
+    height: 50px;
+    border-radius: none;
+    margin-top: 40px;
+    margin-left: 30px;
+    font-size: 20px;
     border: 2px solid rgba(255, 208, 0, 0.725);
     background-color: rgb(11, 10, 10) !important;
-    padding: 8px;
-    text-align: center;
 }
 
+
 .btnFav {
-    width: auto;
-    padding: 5px;
+    width: 20px;
+    height: 10px;
+    padding: 10px;
+    padding-bottom: 10px;
     background: rgb(0, 0, 0) !important;
-    border: none;
+    border: black;
+
 }
 
 .fa-star {
+    margin: auto;
     font-size: 20px;
     color: rgb(255, 200, 0) !important;
+
 }
 
 .fa-star p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-content: center;
+    padding: 10px;
     font-size: 15px;
+    font-weight: 100 !important;
     color: rgb(255, 208, 0) !important;
-    text-align: center;
+
 }
 
 #sidebarOptions {
-    padding: 0;
-    margin-right: 0;
+    padding: 0%;
+    margin-right: 90px;
+    align-content: flex-end;
+
 }
 
 #containerCard {
     border: 1px solid rgb(255, 200, 0);
+
+
 }
 
 #cardBody {
     border: 3px solid rgb(236, 185, 2);
     background-color: black;
-    margin: 20px auto;
-    max-width: 100%;
+    margin: auto;
+    margin-top: 40px;
+    width: 800px;
 }
 
 #cardBody img {
     border-bottom: 3px solid rgb(236, 185, 2);
-    width: 100%;
-    height: auto;
+
+
+
 }
 
 #cardBody h5 {
     color: white;
+    padding: 0;
+    margin: auto;
     text-align: center;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSQy4K9Q0uZS89Yzw_T7Cpm-ZVYjxk217pFA&s");
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSQy4K9Q0uZS89Yzw_T7Cpm-ZVYjxk217pFA&s") !important;
     background-size: cover;
-    padding: 10px;
+
 }
 
-#propiertiesList li, #propiertiesList h3 {
-    font-size: 18px;
+#propiertiesList li {
+    font-size: 20px;
     color: white;
+    border: none;
     background-color: black !important;
 }
 
 #propiertiesList h3 {
     color: rgb(244, 200, 3);
+    border: none;
+    background-color: black !important;
 }
 
-/* Botones personalizados */
-#PersonajesButtons,
-#PlanetasButtons,
-#VehiculosButtons {
-    border-radius: 1px 50px 1px 50px;
-    width: 100%;
-    max-width: 290px;
-    font-weight: bold;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-x: right;
-    box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
-    padding: 10px;
-    margin-bottom: 10px;
-    color: white;
-    text-align: center;
-}
 
 #PersonajesButtons {
+    border-radius: 1px 50px 1px 50px;
+    width: 290px;
+    font-weight: bold;
     background-image: url("https://cdn-ssl.s7.shopdisney.com/is/image/ShopDisney/mb_franchise-star-wars_20190701_2x?fit=constrain&cropN=0,0,1,1&fmt=jpeg&qlt=90&wid=1200");
+    background-size: 290px 50px;
+    background-position-x: right;
+    background-repeat: no-repeat;
+
+    box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
+    -webkit-box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
+    -moz-box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
+
+}
+
+#PersonajesButtons :hover {
+    transition-duration: 400ms;
+    text-shadow: -3px -1px 10px rgb(243, 0, 0);
+
 }
 
 #PlanetasButtons {
+    border-radius: 1px 50px 1px 50px;
+    width: 290px;
+    font-weight: bold;
     background-image: url("https://i.pinimg.com/736x/5d/ee/d4/5deed4733b53eb468208d5d4589fc0d0.jpg");
+    background-size: 290px 50px;
+    background-position-x: right;
+    background-repeat: no-repeat;
+    box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
+    -webkit-box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
+    -moz-box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
 }
 
-#VehiculosButtons {
-    background-image: url("https://c4.wallpaperflare.com/wallpaper/232/550/493/star-trek-uss-enterprise-spaceship-space-multiple-display-wallpaper-preview.jpg");
-}
-
-#PersonajesButtons:hover,
-#PlanetasButtons:hover,
-#VehiculosButtons:hover {
+#PlanetasButtons :hover {
     transition-duration: 400ms;
     text-shadow: -3px -1px 10px rgb(243, 0, 0);
 }
 
+#VehiculosButtons {
+    border-radius: 1px 50px 1px 50px;
+    width: 290px;
+    font-weight: bold;
+    background-image: url("https://c4.wallpaperflare.com/wallpaper/232/550/493/star-trek-uss-enterprise-spaceship-space-multiple-display-wallpaper-preview.jpg");
+    background-size: 290px 50px;
+    background-position-x: right;
+    background-repeat: no-repeat;
+    box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
+    -webkit-box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
+    -moz-box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
+}
+
+#VehiculosButtons :hover {
+    transition-duration: 400ms;
+    text-shadow: -3px -1px 10px rgb(243, 0, 0);
+}
+
+
 #sidebarOptions p {
-    margin-left: 15px;
+    margin-left: 25px;
 }
 
 #addFavs {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-left: 600px;
     margin-top: 10px;
+    flex-direction: row;
+    justify-content: left;
+    align-items: left;
+
 }
 
 #addFavs p {
     color: white;
+
+
+}
+
+
+.card h-100 {
+    border: 1px solid black;
 }
 
 #backgroundBodyCard {
@@ -162,50 +214,40 @@ body {
 #backgroundBodyCard h5 {
     font-size: 30px;
     text-shadow: -2px -1px 2px rgb(72, 72, 72);
+    text-decoration: none !important;
+
 }
 
 #DropDownFavs {
-    width: 100%;
-    max-width: 190px;
+    width: 190px !important;
     color: white;
     margin-top: 20px;
-    padding-left: 10px;
+    padding-left: 10px !important;
+    text-align: left;
     font-size: 20px;
+    height: auto;
+    border-radius: 0%;
     background-color: black;
+
+
+
 }
 
 #DropDownFavs button {
+    padding: 0%;
+    margin-left: 10px;
+    display: inline-block;
     color: red;
     background-color: black;
-    margin: 2px;
-    width: auto;
+    text-align: center;
+    width: 5px;
+    margin: 2px solid white;
+
 }
 
 #imageCard {
-    width: 100%;
-    height: auto;
-}
 
-@media (max-width: 768px) {
-    #HeaderTextBlog {
-        font-size: 2rem;
-        margin-left: 0;
-    }
+    width: auto;
+    height: 200px;
 
-    .nav-link {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-
-    #addFavs {
-        margin-left: 0;
-    }
-
-    #cardBody {
-        width: 100%;
-    }
-
-    #DropDownFavs {
-        font-size: 16px;
-    }
 }

@@ -6,17 +6,18 @@ import { Link } from "react-router-dom";
 const SideBar = () => {
     return (
         <>
-            <ul id="sidebarOptions" class="nav flex-column">
-                <li class="nav-item">
-                    <Link id="PersonajesButtons" class="nav-link" to={"/"} href="#"><p>PERSONAJES</p></Link>
+            <ul id="sidebarOptions" className="nav flex-column">
+                <li className="nav-item">
+                    <Link id="PersonajesButtons" className="nav-link" to={"/"}><p>PERSONAJES</p></Link>
                 </li>
-                <li class="nav-item">
-                    <Link id="PlanetasButtons" class="nav-link" to={"/PlanetsWars"} href="#"><p>PLANETAS</p></Link>
+                <li className="nav-item">
+                    <Link id="PlanetasButtons" className="nav-link" to={"/PlanetsWars"}><p>PLANETAS</p></Link>
                 </li>
-                <li class="nav-item">
-                    <Link id="VehiculosButtons" class="nav-link" to={"/VehiclesWars"} href="#"><p>VEHICULOS</p></Link>
+                <li className="nav-item">
+                    <Link id="VehiculosButtons" className="nav-link" to={"/VehiclesWars"}><p>VEHICULOS</p></Link>
                 </li>
             </ul>
+
 
         </>
 
