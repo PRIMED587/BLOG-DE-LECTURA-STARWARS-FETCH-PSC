@@ -50,11 +50,11 @@ const CharactersWars = () => {
     return (
         <>
 
-            <div className="row row-cols-1 row-cols-md-3 g-4">
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
                 {
                     lista.map((personaje, index) => {
                         return (
-                            <div key={index} className="col-4">
+                            <div key={index} className="col">
                                 <Link to={`/Personajes/${personaje.uid}`}>
                                     <div id="containerCard" className="card h-100">
                                         <img id="imageCard" src={arrayImagenes[index]} className="card-img-top" alt="..." />

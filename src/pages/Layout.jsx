@@ -1,26 +1,28 @@
-import { Outlet } from "react-router-dom/dist"
-import ScrollToTop from "../components/ScrollToTop"
-import Navbar from "../components/Navbar"
-import { Footer } from "../components/Footer"
-import SideBar from "../components/SideBar"
+import { Outlet } from "react-router-dom/dist";
+import ScrollToTop from "../components/ScrollToTop";
+import Navbar from "../components/Navbar";
+import { Footer } from "../components/Footer";
+import SideBar from "../components/SideBar";
 
-// Base component that maintains the navbar and footer throughout the page and the scroll to top functionality.
 export const Layout = () => {
     return (
         <ScrollToTop>
             <Navbar />
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-3">
+            <div className="container-fluid px-0">
+                <div className="row gx-0">
+                    {/* Sidebar - visible siempre como columna en pantallas medianas o más */}
+                    <div className="col-12 col-md-3 bg-black border-end">
                         <SideBar />
                     </div>
-                    <div className="col-md-9">
-                        <Outlet />
 
+                    {/* Contenido principal */}
+                    <div className="col-12 col-md-9 px-3 py-3">
+                        <Outlet />
                     </div>
                 </div>
             </div>
+
             <Footer />
         </ScrollToTop>
-    )
-}
+    );
+};

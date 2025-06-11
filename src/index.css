@@ -1,253 +1,179 @@
-* {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-decoration: none !important;
-}
-
-#HeaderTextBlog {
-    color: rgb(255, 255, 255);
-    font-size: 60px;
-    margin-top: 10px;
-    margin-left: 600px;
-    text-shadow: -3px -1px 10px rgba(255, 255, 255, 0.547);
-
-}
-
+/* =====================
+   RESET & FUENTES BASE
+===================== */
 body {
-    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(3, 15, 33, 1) 52%, rgba(13, 15, 13, 1) 100%);
-
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
 }
 
-#navbarBack {
-    padding: 0%;
-    margin-bottom: 30px;
-    width: auto;
-    height: 110px;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-#warsLogo {
-    width: 160px;
-    height: 100px;
+.container-fluid {
+  padding: 0;
 }
 
-.nav-link {
-
-    color: whitesmoke !important;
-    width: 200px;
-    height: 50px;
-    border-radius: none;
-    margin-top: 40px;
-    margin-left: 30px;
-    font-size: 20px;
-    border: 2px solid rgba(255, 208, 0, 0.725);
-    background-color: rgb(11, 10, 10) !important;
+/* =====================
+   SIDEBAR
+===================== */
+.sidebar {
+  background-color: #1c1c1c;
+  padding: 1rem;
 }
 
-
-.btnFav {
-    width: 20px;
-    height: 10px;
-    padding: 10px;
-    padding-bottom: 10px;
-    background: rgb(0, 0, 0) !important;
-    border: black;
-
+/* =====================
+   BOTONES (Personajes, Planetas, Vehículos, Favoritos)
+===================== */
+#PersonajesButtons,
+#PlanetasButtons,
+#VehiculosButtons,
+#FavoritosButtons {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #0e0e0e;
+  color: #ffc107;
+  border: 2px solid rgba(255, 193, 7, 0.5);
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.fa-star {
-    margin: auto;
-    font-size: 20px;
-    color: rgb(255, 200, 0) !important;
-
+#PersonajesButtons:hover,
+#PlanetasButtons:hover,
+#VehiculosButtons:hover,
+#FavoritosButtons:hover {
+  background-color: rgba(255, 193, 7, 0.2);
+  transform: scale(1.03);
+  color: #fff;
 }
 
-.fa-star p {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    align-content: center;
-    padding: 10px;
-    font-size: 15px;
-    font-weight: 100 !important;
-    color: rgb(255, 208, 0) !important;
-
+/* Responsive para botones en móvil */
+@media (max-width: 768px) {
+  #PersonajesButtons,
+  #PlanetasButtons,
+  #VehiculosButtons,
+  #FavoritosButtons {
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
 }
 
-#sidebarOptions {
-    padding: 0%;
-    margin-right: 90px;
-    align-content: flex-end;
-
+/* =====================
+   NAVBAR & LOGO
+===================== */
+.logo-navbar {
+  max-height: 100px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-#containerCard {
-    border: 1px solid rgb(255, 200, 0);
-
-
+.logo-navbar:hover {
+  transform: scale(1.05);
 }
 
-#cardBody {
-    border: 3px solid rgb(236, 185, 2);
-    background-color: black;
-    margin: auto;
-    margin-top: 40px;
-    width: 800px;
-}
+/* Responsive logo para móviles */
+@media (max-width: 768px) {
+  .logo-navbar {
+    max-height: 70px;
+    display: block;
+    margin: 0 auto;
+  }
 
-#cardBody img {
-    border-bottom: 3px solid rgb(236, 185, 2);
-
-
-
-}
-
-#cardBody h5 {
-    color: white;
-    padding: 0;
-    margin: auto;
+  #HeaderTextBlog {
     text-align: center;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSQy4K9Q0uZS89Yzw_T7Cpm-ZVYjxk217pFA&s") !important;
-    background-size: cover;
+  }
 
-}
+  #HeaderTextBlog p {
+    font-size: 1.2rem;
+  }
 
-#propiertiesList li {
-    font-size: 20px;
-    color: white;
-    border: none;
-    background-color: black !important;
-}
-
-#propiertiesList h3 {
-    color: rgb(244, 200, 3);
-    border: none;
-    background-color: black !important;
+  .btnFav {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.75rem;
+  }
 }
 
 
-#PersonajesButtons {
-    border-radius: 1px 50px 1px 50px;
-    width: 290px;
-    font-weight: bold;
-    background-image: url("https://cdn-ssl.s7.shopdisney.com/is/image/ShopDisney/mb_franchise-star-wars_20190701_2x?fit=constrain&cropN=0,0,1,1&fmt=jpeg&qlt=90&wid=1200");
-    background-size: 290px 50px;
-    background-position-x: right;
-    background-repeat: no-repeat;
-
-    box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
-    -webkit-box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
-    -moz-box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
-
-}
-
-#PersonajesButtons :hover {
-    transition-duration: 400ms;
-    text-shadow: -3px -1px 10px rgb(243, 0, 0);
-
-}
-
-#PlanetasButtons {
-    border-radius: 1px 50px 1px 50px;
-    width: 290px;
-    font-weight: bold;
-    background-image: url("https://i.pinimg.com/736x/5d/ee/d4/5deed4733b53eb468208d5d4589fc0d0.jpg");
-    background-size: 290px 50px;
-    background-position-x: right;
-    background-repeat: no-repeat;
-    box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
-    -webkit-box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
-    -moz-box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
-}
-
-#PlanetasButtons :hover {
-    transition-duration: 400ms;
-    text-shadow: -3px -1px 10px rgb(243, 0, 0);
-}
-
-#VehiculosButtons {
-    border-radius: 1px 50px 1px 50px;
-    width: 290px;
-    font-weight: bold;
-    background-image: url("https://c4.wallpaperflare.com/wallpaper/232/550/493/star-trek-uss-enterprise-spaceship-space-multiple-display-wallpaper-preview.jpg");
-    background-size: 290px 50px;
-    background-position-x: right;
-    background-repeat: no-repeat;
-    box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
-    -webkit-box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
-    -moz-box-shadow: -13px 15px 0px -3px rgba(255, 215, 0, 0.75);
-}
-
-#VehiculosButtons :hover {
-    transition-duration: 400ms;
-    text-shadow: -3px -1px 10px rgb(243, 0, 0);
-}
-
-
-#sidebarOptions p {
-    margin-left: 25px;
-}
-
-#addFavs {
-    display: flex;
-    margin-left: 600px;
-    margin-top: 10px;
-    flex-direction: row;
-    justify-content: left;
-    align-items: left;
-
-}
-
-#addFavs p {
-    color: white;
-
-
-}
-
-
-.card h-100 {
-    border: 1px solid black;
-}
-
-#backgroundBodyCard {
-    font-size: 30px;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf7J-KsJHCAiIgo6wJNk7-VtbJ8QT_w0cFHQ&s");
-    background-size: cover;
-}
-
-#backgroundBodyCard h5 {
-    font-size: 30px;
-    text-shadow: -2px -1px 2px rgb(72, 72, 72);
-    text-decoration: none !important;
-
-}
-
+/* =====================
+   DROPDOWN FAVORITOS
+===================== */
 #DropDownFavs {
-    width: 190px !important;
-    color: white;
-    margin-top: 20px;
-    padding-left: 10px !important;
-    text-align: left;
-    font-size: 20px;
-    height: auto;
-    border-radius: 0%;
-    background-color: black;
+  max-height: 200px;
+  overflow-y: auto;
+}
 
 
+/* =====================
+   ESTILO MEJORADO DROPDOWN FAVORITOS
+===================== */
+#DropDownFavs {
+  background-color: #1c1c1c;
+  color: #ffc107;
+  border: 2px solid rgba(255, 193, 7, 0.5);
+  box-shadow: 0px 4px 12px rgba(255, 193, 7, 0.2);
+  padding: 0.5rem;
+  border-radius: 8px;
+  min-width: 200px;
+  max-height: 250px;
+  overflow-y: auto;
+  font-size: 0.95rem;
+}
 
+#DropDownFavs li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.6rem;
+  margin-bottom: 0.2rem;
+  background-color: #0e0e0e;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+#DropDownFavs li:hover {
+  background-color: rgba(255, 193, 7, 0.1);
 }
 
 #DropDownFavs button {
-    padding: 0%;
-    margin-left: 10px;
-    display: inline-block;
-    color: red;
-    background-color: black;
-    text-align: center;
-    width: 5px;
-    margin: 2px solid white;
-
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-#imageCard {
+#DropDownFavs button:hover {
+  color: #ff9999;
+  transform: scale(1.2);
+}
 
-    width: auto;
-    height: 200px;
+/* =====================
+   BOTÓN "FAVORITOS" NAVBAR
+===================== */
+.btnFav {
+  background-color: #0e0e0e !important;
+  border: 2px solid rgba(255, 193, 7, 0.5);
+  color: #ffc107 !important;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
+.btnFav:hover {
+  background-color: rgba(255, 193, 7, 0.1) !important;
+  color: #fff !important;
+  transform: scale(1.05);
 }
