@@ -34,9 +34,9 @@ const Navbar = () => {
 									{item}
 									<button
 										onClick={() => misFavoritos(dispatch, item, store)}
-										className="btnFav btn btn-dark dropdown-toggle text-warning"
+										className="btnFav btn btn-dark"
 									>
-										<i className="fa-solid fa-star me-2"></i>Favoritos
+										<i className="fa-solid fa-user-slash"></i>
 
 									</button>
 								</li>
