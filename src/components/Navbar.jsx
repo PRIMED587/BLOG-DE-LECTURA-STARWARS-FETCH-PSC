@@ -20,7 +20,7 @@ const Navbar = () => {
 				</div>
 
 				<div id="HeaderTextBlog" className="text-white fw-bold text-center col-12 col-md">
-					<p className="m-0">BLOG</p>
+					<h1 className="m-0">MI PRIMER BLOG</h1>
 				</div>
 
 				<div className="ml-auto order-2 col-12 col-md-auto d-flex justify-content-center justify-content-md-end mt-2 mt-md-0">
