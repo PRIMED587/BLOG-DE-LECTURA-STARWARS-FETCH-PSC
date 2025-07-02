@@ -1,11 +1,33 @@
 import { Link } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 import { misFavoritos } from "../store";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 const Navbar = () => {
   const { store, dispatch } = useGlobalReducer();
   const dropdownRef = useRef(null);
+  const menuRef = useRef(null);
+  const [hovering, setHovering] = useState(false);
+
+  useEffect(() => {
+    let timeout;
+
+    if (!hovering && store.favoritos.length === 0) {
+      timeout = setTimeout(() => {
+        if (dropdownRef.current) {
+          const dropdown =
+            bootstrap.Dropdown.getInstance(dropdownRef.current) ||
+            new bootstrap.Dropdown(dropdownRef.current);
+          dropdown.hide();
+        }
+      }, 1000);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [hovering, store.favoritos.length]);
+
+  const handleMouseEnter = () => setHovering(true);
+  const handleMouseLeave = () => setHovering(false);
 
   return (
     <nav id="navbarBack" className="navbar navbar-dark bg-black">
@@ -25,28 +47,20 @@ const Navbar = () => {
           id="HeaderTextBlog"
           className="text-white fw-bold text-center col-12 col-md"
         >
-          <h1 className="m-0">MI PRIMER BLOG</h1>
+          <h1 className="m-0"></h1>
         </div>
 
         <div className="ml-auto order-2 col-12 col-md-auto d-flex justify-content-center justify-content-md-end mt-2 mt-md-0">
           <div className="dropdown">
             <button
               ref={dropdownRef}
-              className="btnFav btn-secondary dropdown-toggle"
+              className="btnNavbarFav btn-secondary dropdown-toggle"
               type="button"
               id="dropdownMenu2"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-              onClick={() => {
-                setTimeout(() => {
-                  if (dropdownRef.current) {
-                    const dropdown =
-                      bootstrap.Dropdown.getInstance(dropdownRef.current) ||
-                      new bootstrap.Dropdown(dropdownRef.current);
-                    dropdown.hide(); // Cierra el dropdown
-                  }
-                }, 1000); // 4 segundos
-              }}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               <i className="fa-solid fa-star"></i>{" "}
               <span className="ms-1">Favoritos</span>
@@ -55,10 +69,13 @@ const Navbar = () => {
               id="DropDownFavs"
               className="dropdown-menu"
               aria-labelledby="dropdownMenu2"
+              ref={menuRef}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               {store.favoritos.length === 0 ? (
                 <li className="dropdown-item text-center text-warning">
-                  Aún no has agregado a favoritos
+                  Sin favoritos
                 </li>
               ) : (
                 store.favoritos.map((item, index) => (
@@ -69,7 +86,7 @@ const Navbar = () => {
                     {item}
                     <button
                       onClick={() => misFavoritos(dispatch, item, store)}
-                      className="btnFav btn btn-dark"
+                      className="btnEliminarFav btn btn-dark"
                     >
                       <i className="fa-solid fa-user-slash"></i>
                     </button>

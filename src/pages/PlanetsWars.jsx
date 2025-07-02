@@ -41,26 +41,28 @@ const PlanetsWars = () => {
 
   return (
     <>
-      <div className="row row-cols-1 row-cols-md-3 g-4">
-        {lista.map((planeta, index) => {
-          return (
-            <div key={index} className="col">
-              <Link to={`/Planetas/${planeta.uid}`}>
-                <div className="card characters-card h-100">
-                  <img
-                    src={arrayImagenes[index]}
-                    alt="..."
-                    className="characters-img"
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">{planeta.name}</h5>
-                    <p className="card-text"></p>
+      <div className="main-content">
+        <div className="row row-cols-1 row-cols-md-3 g-4">
+          {lista.map((planeta, index) => {
+            return (
+              <div key={index} className="col">
+                <Link to={`/Planetas/${planeta.uid}`}>
+                  <div className="card characters-card h-100">
+                    <img
+                      src={arrayImagenes[index]}
+                      alt="..."
+                      className="characters-img"
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title">{planeta.name}</h5>
+                      <p className="card-text"></p>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            </div>
-          );
-        })}
+                </Link>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );

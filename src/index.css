@@ -3,7 +3,7 @@
 ===================== */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #121212;
   color: #ffffff;
 }
@@ -23,10 +23,54 @@ a {
 .sidebar {
   background-color: #1c1c1c;
   padding: 1rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  min-height: 100vh;
+  overflow-y: auto;
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.1);
+  z-index: 1;
+}
+
+/* Ocultar sidebar en móvil y mostrar burger */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .burger-toggle {
+    display: block;
+    background-color: #0e0e0e;
+    color: #ffc107;
+    border: 2px solid rgba(255, 193, 7, 0.5);
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .burger-menu {
+    display: block;
+    background-color: #1c1c1c;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 8px;
+  }
+}
+
+/* Mostrar sidebar normalmente en pantallas grandes */
+@media (min-width: 769px) {
+  .burger-toggle {
+    display: none;
+  }
+  .burger-menu {
+    display: none;
+  }
 }
 
 /* =====================
-   BOTONES (Personajes, Planetas, Vehículos, Favoritos)
+   BOTONES SIDEBAR (Personajes, Planetas, Vehículos, Favoritos)
 ===================== */
 #PersonajesButtons,
 #PlanetasButtons,
@@ -50,10 +94,9 @@ a {
 #FavoritosButtons:hover {
   background-color: rgba(255, 193, 7, 0.2);
   transform: scale(1.03);
-  color: #fff;
+  color: #ffffff;
 }
 
-/* Responsive para botones en móvil */
 @media (max-width: 768px) {
   #PersonajesButtons,
   #PlanetasButtons,
@@ -62,6 +105,12 @@ a {
     font-size: 1rem;
     padding: 0.6rem;
   }
+}
+
+.nav-link.active p {
+  color: #fff;
+  font-weight: bolder;
+  text-shadow: 0px 0px 5px #ffc107;
 }
 
 /* =====================
@@ -73,13 +122,13 @@ a {
   border-radius: 8px;
   object-fit: contain;
   transition: transform 0.3s ease;
+  z-index: 1050;
 }
 
 .logo-navbar:hover {
   transform: scale(1.05);
 }
 
-/* Responsive logo para móviles */
 @media (max-width: 768px) {
   .logo-navbar {
     max-height: 70px;
@@ -101,18 +150,8 @@ a {
   }
 }
 
-
 /* =====================
    DROPDOWN FAVORITOS
-===================== */
-#DropDownFavs {
-  max-height: 200px;
-  overflow-y: auto;
-}
-
-
-/* =====================
-   ESTILO MEJORADO DROPDOWN FAVORITOS
 ===================== */
 #DropDownFavs {
   background-color: #1c1c1c;
@@ -125,9 +164,11 @@ a {
   max-height: 250px;
   overflow-y: auto;
   font-size: 0.95rem;
+  z-index: 1051;
 }
 
 #DropDownFavs li {
+  color: #ffc107;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -142,7 +183,8 @@ a {
   background-color: rgba(255, 193, 7, 0.1);
 }
 
-#DropDownFavs button {
+#DropDownFavs button,
+.btnEliminarFav {
   background: none;
   border: none;
   color: #ff4d4d;
@@ -151,18 +193,20 @@ a {
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
-#DropDownFavs button:hover {
+#DropDownFavs button:hover,
+.btnEliminarFav:hover {
   color: #ff9999;
   transform: scale(1.2);
 }
 
 /* =====================
-   BOTÓN "FAVORITOS" NAVBAR
+   BOTÓN FAVORITOS EN CARDS
 ===================== */
 .btnFav {
   background-color: #0e0e0e !important;
   border: 2px solid rgba(255, 193, 7, 0.5);
   color: #ffc107 !important;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   padding: 0.5rem 1rem;
   border-radius: 8px;
@@ -173,15 +217,29 @@ a {
 }
 
 .btnFav:hover {
-  background-color: rgba(255, 193, 7, 0.1) !important;
-  color: #fff !important;
-  transform: scale(1.05);
+  background-color: rgba(0, 0, 0, 0.699) !important;
+  transform: scale(1.5);
+}
+
+/* =====================
+   BOTÓN FAVORITOS EN NAVBAR
+===================== */
+.btnNavbarFav {
+  background-color: #000 !important;
+  border: 2px solid #ffc107;
+  color: #ffc107 !important;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* =====================
    ESTILOS PARA LAS CARDS DE PERSONAJES
 ===================== */
-
 .characters-card {
   width: 100%;
   max-width: 300px;
@@ -190,17 +248,16 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  padding: 1rem;
+  padding: 0.2rem;
   background-image: url('https://t3.ftcdn.net/jpg/10/28/87/62/360_F_1028876221_yYd5P7xRvg7OYtfgchY3OFrWVC5TaUnQ.jpg');
   background-size: cover;
   background-position: center;
-  border-radius: 10px;
+  border-radius: 2px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s ease;
   overflow: hidden;
   margin: 0 auto;
 }
-
 
 .characters-card:hover {
   transform: scale(1.05);
@@ -208,18 +265,20 @@ a {
 
 .characters-img {
   width: 100%;
-  height: 250px;         /* Mantiene altura fija */
-  object-fit: cover;     /* Recorta imagen sin deformar */
-  border-radius: 8px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 3px;
   display: block;
 }
 
-/* Título y descripción dentro de la card */
 .characters-card h5 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-align: center;
-  color: #ffc107;
+  color: #ffc400;
+  padding: 0.4rem 0.75rem;
+  display: inline-block;
+  text-shadow: 2px 3px 3px rgb(61, 59, 59);
 }
 
 .characters-card p {
@@ -228,6 +287,9 @@ a {
   text-align: center;
 }
 
+/* =====================
+   DETALLE DE PERSONAJE
+===================== */
 .personaje-card {
   width: 100%;
   max-width: 600px;
@@ -255,6 +317,15 @@ a {
     min-height: 200px;
     max-height: 200px;
   }
+
+  .characters-card {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .characters-card img {
+    height: 200px;
+  }
 }
 
 .personaje-body {
@@ -275,7 +346,6 @@ a {
 .personaje-card strong,
 .personaje-card p {
   font-size: 1.5rem;
-  text-align: ;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
   color: #fff;
 }
@@ -286,14 +356,52 @@ a {
   text-align: center;
 }
 
-/* Responsive: alinea las cards en pantallas más pequeñas */
-@media (max-width: 768px) {
-  .characters-card {
-    max-width: 100%;
-    height: auto;
-  }
+/* =====================
+   CONTENEDOR PRINCIPAL (AJUSTE RESPONSIVO)
+===================== */
+.main-content {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: 0;
+}
 
-  .characters-card img {
-    height: 200px;
+@media (min-width: 768px) {
+  .main-content {
+    margin-left: 250px;
   }
+}
+
+.footer {
+  background-color: #000000;
+  color: #ffc107;
+  border-top: 2px solid rgba(255, 193, 7, 0.3);
+  padding: 1rem 0;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.footer i {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.star-icon {
+  animation: spin 2s linear infinite;
+  margin: 0 5px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
 }
