@@ -1,52 +1,87 @@
 import { Link } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 import { misFavoritos } from "../store";
+import { useRef, useEffect } from "react";
 
 const Navbar = () => {
-	const { store, dispatch } = useGlobalReducer();
+  const { store, dispatch } = useGlobalReducer();
+  const dropdownRef = useRef(null);
 
-	return (
-		<nav id="navbarBack" className="navbar navbar-dark bg-black">
-			<div className="container d-flex justify-content-between align-items-center flex-wrap">
-				<div className="order-1 order-md-0 col-12 col-md-auto d-flex justify-content-center justify-content-md-start mb-2 mb-md-0">
-					<Link to="/">
-						<img
-							id="warsLogo"
-							src="https://brandemia.org/contenido/subidas/2021/05/portada-starwars-imagenes-brandemia-blog-1000x670.jpg"
-							alt="Star Wars Logo"
-							className="logo-navbar"
-						/>
-					</Link>
-				</div>
+  return (
+    <nav id="navbarBack" className="navbar navbar-dark bg-black">
+      <div className="container d-flex justify-content-between align-items-center flex-wrap">
+        <div className="order-1 order-md-0 col-12 col-md-auto d-flex justify-content-center justify-content-md-start mb-2 mb-md-0">
+          <Link to="/">
+            <img
+              id="warsLogo"
+              src="https://brandemia.org/contenido/subidas/2021/05/portada-starwars-imagenes-brandemia-blog-1000x670.jpg"
+              alt="Star Wars Logo"
+              className="logo-navbar"
+            />
+          </Link>
+        </div>
 
-				<div id="HeaderTextBlog" className="text-white fw-bold text-center col-12 col-md">
-					<h1 className="m-0">MI PRIMER BLOG</h1>
-				</div>
+        <div
+          id="HeaderTextBlog"
+          className="text-white fw-bold text-center col-12 col-md"
+        >
+          <h1 className="m-0">MI PRIMER BLOG</h1>
+        </div>
 
-				<div className="ml-auto order-2 col-12 col-md-auto d-flex justify-content-center justify-content-md-end mt-2 mt-md-0">
-					<div className="dropdown">
-						<button className="btnFav btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-							<i className="fa-solid fa-star"></i> <span className="ms-1">Favoritos</span>
-						</button>
-						<ul id="DropDownFavs" className="dropdown-menu" aria-labelledby="dropdownMenu2">
-							{store.favoritos.map((item, index) => (
-								<li key={index} className="dropdown-item d-flex justify-content-between align-items-center">
-									{item}
-									<button
-										onClick={() => misFavoritos(dispatch, item, store)}
-										className="btnFav btn btn-dark"
-									>
-										<i className="fa-solid fa-user-slash"></i>
-
-									</button>
-								</li>
-							))}
-						</ul>
-					</div>
-				</div>
-			</div>
-		</nav>
-	);
+        <div className="ml-auto order-2 col-12 col-md-auto d-flex justify-content-center justify-content-md-end mt-2 mt-md-0">
+          <div className="dropdown">
+            <button
+              ref={dropdownRef}
+              className="btnFav btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenu2"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              onClick={() => {
+                setTimeout(() => {
+                  if (dropdownRef.current) {
+                    const dropdown =
+                      bootstrap.Dropdown.getInstance(dropdownRef.current) ||
+                      new bootstrap.Dropdown(dropdownRef.current);
+                    dropdown.hide(); // Cierra el dropdown
+                  }
+                }, 1000); // 4 segundos
+              }}
+            >
+              <i className="fa-solid fa-star"></i>{" "}
+              <span className="ms-1">Favoritos</span>
+            </button>
+            <ul
+              id="DropDownFavs"
+              className="dropdown-menu"
+              aria-labelledby="dropdownMenu2"
+            >
+              {store.favoritos.length === 0 ? (
+                <li className="dropdown-item text-center text-warning">
+                  Aún no has agregado a favoritos
+                </li>
+              ) : (
+                store.favoritos.map((item, index) => (
+                  <li
+                    key={index}
+                    className="dropdown-item d-flex justify-content-between align-items-center"
+                  >
+                    {item}
+                    <button
+                      onClick={() => misFavoritos(dispatch, item, store)}
+                      className="btnFav btn btn-dark"
+                    >
+                      <i className="fa-solid fa-user-slash"></i>
+                    </button>
+                  </li>
+                ))
+              )}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;

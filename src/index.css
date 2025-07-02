@@ -178,41 +178,122 @@ a {
   transform: scale(1.05);
 }
 
+/* =====================
+   ESTILOS PARA LAS CARDS DE PERSONAJES
+===================== */
+
 .characters-card {
+  width: 100%;
+  max-width: 300px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 1rem;
   background-image: url('https://t3.ftcdn.net/jpg/10/28/87/62/360_F_1028876221_yYd5P7xRvg7OYtfgchY3OFrWVC5TaUnQ.jpg');
   background-size: cover;
   background-position: center;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgb(0, 0, 0);
-  padding: 1rem;
-  margin: 1rem;
-  width: 300px;  /* Tamaño fijo para todas las cards */
-  height: 450px; /* Fijo para que tengan todas la misma altura */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #fff;
-  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s ease;
+  overflow: hidden;
+  margin: 0 auto;
 }
+
 
 .characters-card:hover {
   transform: scale(1.05);
 }
 
-/* Imagen dentro de la card */
-.characters-card img {
+.characters-img {
   width: 100%;
-  height: 250px; /* Tamaño fijo para las imágenes */
-  object-fit: cover;
+  height: 250px;         /* Mantiene altura fija */
+  object-fit: cover;     /* Recorta imagen sin deformar */
   border-radius: 8px;
-  margin-bottom: 1rem;
+  display: block;
 }
 
-/* Título o texto dentro de la card */
-.characters-card h3,
+/* Título y descripción dentro de la card */
+.characters-card h5 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ffc107;
+}
+
 .characters-card p {
-  margin: 0.25rem 0;
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
   text-align: center;
 }
 
+.personaje-card {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-image: url("https://t3.ftcdn.net/jpg/10/28/87/62/360_F_1028876221_yYd5P7xRvg7OYtfgchY3OFrWVC5TaUnQ.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.personaje-img-top {
+  width: 100%;
+  height: 300px;
+  min-height: 300px;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .personaje-img-top {
+    height: 200px;
+    min-height: 200px;
+    max-height: 200px;
+  }
+}
+
+.personaje-body {
+  padding: 1.5rem;
+}
+
+.personaje-body ul li {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.personaje-card strong {
+  color: #ffc107;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.personaje-card h1,
+.personaje-card ul li,
+.personaje-card strong,
+.personaje-card p {
+  font-size: 1.5rem;
+  text-align: ;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
+
+.personaje-card h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Responsive: alinea las cards en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .characters-card {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .characters-card img {
+    height: 200px;
+  }
+}
